@@ -19,7 +19,7 @@ def exercice1():
 
 @app.route('/exercice2')
 def exercice2():
-    return render_template('exercice2.html')
+    return render_template('exercice2')
 
 @app.route('/exercice3')
 def exercice3():
