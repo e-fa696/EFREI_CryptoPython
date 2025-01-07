@@ -8,7 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            line-height: 1.6;
+            background-color: #f4f4f4;
         }
         h1 {
             color: #2c3e50;
@@ -27,15 +27,11 @@
         a:hover {
             color: #3498db;
         }
-        .crypto {
-            margin-top: 30px;
-        }
     </style>
 </head>
 <body>
     <h1>Bienvenue dans votre atelier CryptoPython !</h1>
-
-    <h2>Navigation vers les exercices</h2>
+    <p>Choisissez une option :</p>
     <ul>
         <li><a href="/exercice1">Exercice 1 : Première page HTML</a></li>
         <li><a href="/exercice2">Exercice 2 : Page structurée</a></li>
@@ -43,15 +39,5 @@
         <li><a href="/exercice4">Exercice 4 : Mini-CV</a></li>
         <li><a href="/exercice5">Exercice 5 : Site avec cadres</a></li>
     </ul>
-
-    <div class="crypto">
-        <h2>Fonctionnalités de cryptage</h2>
-        <p>Utilisez les URLs suivantes pour tester les fonctionnalités :</p>
-        <ul>
-            <li><b>Crypter une valeur :</b> <code>/encrypt/&lt;valeur&gt;</code></li>
-            <li><b>Décrypter une valeur :</b> <code>/decrypt/&lt;valeur&gt;</code></li>
-            <li><b>Définir une clé personnalisée :</b> Envoyez une requête POST à <code>/set-key</code> avec un JSON contenant <code>{"key": "votre_clé"}</code>.</li>
-        </ul>
-    </div>
 </body>
 </html>
