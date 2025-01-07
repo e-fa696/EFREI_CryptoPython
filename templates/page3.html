@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 3 - Formulaire</title>
+</head>
+<body>
+    <h2>Exercice 3 : Un formulaire avec plein de choses !</h2>
+    <form action="#" method="post">
+        <label for="pseudo">Votre pseudo :</label>
+        <input type="text" id="pseudo" name="pseudo"><br><br>
 
+        <label for="password">Votre mot de passe :</label>
+        <input type="password" id="password" name="password"><br><br>
+
+        <label for="confirm-password">Ressaisir votre mot de passe :</label>
+        <input type="password" id="confirm-password" name="confirm-password"><br><br>
+
+        <p>OS préféré :</p>
+        <input type="radio" id="xp" name="os" value="Windows XP">
+        <label for="xp">Windows XP</label><br>
+
+        <input type="radio" id="vista" name="os" value="Windows Vista">
+        <label for="vista">Windows Vista</label><br>
+
+        <input type="radio" id="mac" name="os" value="MacOS X">
+        <label for="mac">MacOS X</label><br>
+
+        <input type="radio" id="linux" name="os" value="Linux">
+        <label for="linux">Linux</label><br>
+
+        <input type="radio" id="autre" name="os" value="Autre">
+        <label for="autre">Autre</label><br><br>
+
+        <p>Vous possédez :</p>
+        <input type="checkbox" id="bureau" name="equipement" value="bureau">
+        <label for="bureau">Un ordinateur de bureau</label><br>
+
+        <input type="checkbox" id="portable" name="equipement" value="portable">
+        <label for="portable">Un portable</label><br>
+
+        <input type="checkbox" id="netbook" name="equipement" value="netbook">
+        <label for="netbook">Un netbook</label><br>
+
+        <input type="checkbox" id="tablette" name="equipement" value="tablette">
+        <label for="tablette">Une tablette (Pad)</label><br><br>
+
+        <label for="profession">Votre profession :</label>
+        <select id="profession" name="profession">
+            <option value="chomeur">Chômeur</option>
+            <option value="etudiant">Étudiant</option>
+            <option value="fonctionnaire">Fonctionnaire</option>
+            <option value="prive">Privé</option>
+            <option value="retraite">Retraité</option>
+        </select><br><br>
+
+        <button type="submit">S'inscrire !</button>
+    </form>
+</body>
+</html>
