@@ -10,7 +10,7 @@ f = Fernet(key)
 # Page d'accueil avec des catégories cliquables
 @app.route('/')
 def accueil():
-    return render_template('index.html')
+    return render_template('hello.html')
 
 # Routes pour chaque exercice
 @app.route('/exercice1')
