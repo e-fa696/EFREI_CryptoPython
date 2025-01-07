@@ -15,23 +15,23 @@ def accueil():
 # Routes pour chaque exercice
 @app.route('/exercice1')
 def exercice1():
-    return render_template('exercice1.html')
+    return render_template('page1.html')
 
 @app.route('/exercice2')
 def exercice2():
-    return render_template('exercice2.html')
+    return render_template('page2.html')
 
 @app.route('/exercice3')
 def exercice3():
-    return render_template('exercice3.html')
+    return render_template('page3.html')
 
 @app.route('/exercice4')
 def exercice4():
-    return render_template('exercice4.html')
+    return render_template('page4.html')
 
 @app.route('/exercice5')
 def exercice5():
-    return render_template('exercice5.html')
+    return render_template('page5.html')
 
 # Route pour crypter une valeur
 @app.route('/encrypt/<string:valeur>')
