@@ -1,3 +1,57 @@
 <!doctype html>
-<title>CryptoPython</title>
-<h1>Bienvue dans votre atelier CryptoPython !</h1>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoPython</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #2980b9;
+        }
+        a:hover {
+            color: #3498db;
+        }
+        .crypto {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenue dans votre atelier CryptoPython !</h1>
+
+    <h2>Navigation vers les exercices</h2>
+    <ul>
+        <li><a href="/exercice1">Exercice 1 : Première page HTML</a></li>
+        <li><a href="/exercice2">Exercice 2 : Page structurée</a></li>
+        <li><a href="/exercice3">Exercice 3 : Formulaire</a></li>
+        <li><a href="/exercice4">Exercice 4 : Mini-CV</a></li>
+        <li><a href="/exercice5">Exercice 5 : Site avec cadres</a></li>
+    </ul>
+
+    <div class="crypto">
+        <h2>Fonctionnalités de cryptage</h2>
+        <p>Utilisez les URLs suivantes pour tester les fonctionnalités :</p>
+        <ul>
+            <li><b>Crypter une valeur :</b> <code>/encrypt/&lt;valeur&gt;</code></li>
+            <li><b>Décrypter une valeur :</b> <code>/decrypt/&lt;valeur&gt;</code></li>
+            <li><b>Définir une clé personnalisée :</b> Envoyez une requête POST à <code>/set-key</code> avec un JSON contenant <code>{"key": "votre_clé"}</code>.</li>
+        </ul>
+    </div>
+</body>
+</html>
