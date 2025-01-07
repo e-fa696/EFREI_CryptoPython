@@ -33,14 +33,16 @@ def exercice4():
 def exercice5():
     return render_template('exercice5.html')
 
-# Route pour crypter une valeur
+# Routes pour les fonctionnalités de cryptage
 @app.route('/encrypt/<string:valeur>')
 def encryptage(valeur):
-    valeur_bytes = valeur.encode()  # Conversion de la chaîne en bytes
-    token = f.encrypt(valeur_bytes)  # Crypter la valeur
-    return f"Valeur cryptée : {token.decode()}"  # Retourne le token crypté sous forme de chaîne
+    try:
+        valeur_bytes = valeur.encode()  # Conversion de la chaîne en bytes
+        token = f.encrypt(valeur_bytes)  # Crypter la valeur
+        return f"Valeur cryptée : {token.decode()}"  # Retourne le token crypté sous forme de chaîne
+    except Exception as e:
+        return f"Erreur lors du cryptage : {str(e)}"
 
-# Route pour décrypter une valeur
 @app.route('/decrypt/<string:valeur>')
 def decryptage(valeur):
     try:
@@ -48,7 +50,7 @@ def decryptage(valeur):
         decrypted_value = f.decrypt(valeur_bytes)  # Décrypter la valeur
         return f"Valeur décryptée : {decrypted_value.decode()}"  # Retourne la valeur décryptée sous forme de chaîne
     except Exception as e:
-        return f"Erreur lors du décryptage : {str(e)}"  # En cas d'erreur, retourne un message d'erreur
+        return f"Erreur lors du décryptage : {str(e)}"
 
 # Route pour permettre à l'utilisateur de définir sa propre clé
 @app.route('/set-key', methods=['POST'])
