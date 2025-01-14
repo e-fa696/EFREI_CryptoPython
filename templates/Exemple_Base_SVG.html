@@ -1,0 +1,15 @@
+﻿<html>
+<head>
+
+</head>
+
+<body>
+
+<svg width="750" height="750" style="background-color:	rgba(200,200,200, 0.5)">
+<circle id="foo" style="fill:none; stroke:red; stroke-width:30px;" cx="375" cy="375" r="200" />
+<rect style="fill:green; stroke:blue; stroke-width:30px;" x="230" y="300" width="290" height="150" />
+<polygon style="fill:green; stroke:blue; stroke-width:3px;" points="0 0, 100 100, 0 100"/>
+</svg>
+
+</body>
+</html>
