@@ -40,9 +40,16 @@ def Exemple_Base_SVG():
 @app.route('/Maison')
 def Maison():
     return render_template('Maison.html')
+
 @app.route('/jack')
 def jack():
     return render_template('jack.html')
+
+@app.route('/chenille')
+def chenille():
+    return render_template('chenille.html')
+
+
     
 # Route pour crypter une valeur
 @app.route('/encrypt/<string:valeur>')
