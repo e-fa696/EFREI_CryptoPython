@@ -33,6 +33,11 @@ def exercice4():
 def exercice5():
     return render_template('page5.html')
 
+@app.route('/Exemple_Base_SVG')
+def exercice5():
+    return render_template('Exemple_Base_SVG.html')
+
+
 # Route pour crypter une valeur
 @app.route('/encrypt/<string:valeur>')
 def encryptage(valeur):
