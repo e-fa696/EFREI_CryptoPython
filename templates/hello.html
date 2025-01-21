@@ -6,7 +6,7 @@
     <title>CryptoPython</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-        
+
         body {
             font-family: 'Orbitron', sans-serif;
             margin: 20px;
@@ -28,11 +28,12 @@
             padding: 10px;
             border-radius: 5px;
             border: 2px solid #ff0099;
-            transition: transform 0.3s, border-color 0.3s;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
         }
         li:hover {
             transform: scale(1.05);
             border-color: #00e6e6;
+            box-shadow: 0 0 10px #00e6e6, 0 0 20px #00e6e6;
         }
         a {
             text-decoration: none;
@@ -43,6 +44,23 @@
         }
         a:hover {
             color: #ff0099;
+        }
+        .neon-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px 0;
+            background-color: #0d0d0d;
+            color: #00e6e6;
+            border: 2px solid #00e6e6;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .neon-button:hover {
+            background-color: #00e6e6;
+            color: #0d0d0d;
+            box-shadow: 0 0 10px #00e6e6, 0 0 20px #00e6e6, 0 0 30px #00e6e6;
         }
     </style>
 </head>
@@ -55,11 +73,12 @@
         <li><a href="/exercice3">Exercice 3 : Formulaire</a></li>
         <li><a href="/exercice4">Exercice 4 : Mini-CV</a></li>
         <li><a href="/exercice5">Exercice 5 : Site avec cadres</a></li>
-        <li><a href="/Exemple_Base_SVG">Cours : Voir ce qui se passe </a></li>
-        <li><a href="/Maison"> Maison </a></li>
-        <li><a href="/jack"> Jack </a></li>
-        <li><a href="/chenille"> Chenille </a></li>
-        <li><a href="/jeu_de_des"> Jeu de dés </a></li>
+        <li><a href="/Exemple_Base_SVG">Cours : Voir ce qui se passe</a></li>
+        <li><a href="/Maison">Maison</a></li>
+        <li><a href="/jack">Jack</a></li>
+        <li><a href="/chenille">Chenille</a></li>
+        <li><a href="/jeu_de_des">Jeu de dés</a></li>
     </ul>
+    <div class="neon-button">Cyberpunk 2077</div>
 </body>
 </html>
