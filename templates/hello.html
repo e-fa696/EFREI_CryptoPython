@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CryptoPython</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        
         body {
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Orbitron', sans-serif;
             margin: 20px;
-            background-color: #0f0f0f;
-            color: #00ffcc;
-            text-shadow: 0 0 5px #00ffcc;
+            background-color: #0d0d0d;
+            color: #00e6e6;
+            text-shadow: 0 0 5px #00e6e6;
         }
         h1 {
-            color: #ff00ff;
-            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+            color: #ff0099;
+            text-shadow: 0 0 10px #ff0099, 0 0 20px #ff0099, 0 0 30px #ff0099;
         }
         ul {
             list-style-type: none;
@@ -25,19 +27,22 @@
             background-color: #1a1a1a;
             padding: 10px;
             border-radius: 5px;
-            transition: transform 0.3s;
+            border: 2px solid #ff0099;
+            transition: transform 0.3s, border-color 0.3s;
         }
         li:hover {
             transform: scale(1.05);
+            border-color: #00e6e6;
         }
         a {
             text-decoration: none;
-            color: #00ffcc;
+            color: #00e6e6;
             display: block;
             text-align: center;
+            transition: color 0.3s;
         }
         a:hover {
-            color: #ff00ff;
+            color: #ff0099;
         }
     </style>
 </head>
