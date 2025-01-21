@@ -1,46 +1,120 @@
-<html>
+<!doctype html>
+<html lang="fr">
 <head>
-<script>
-// Fonction pour afficher ou masquer les images en fonction des cases à cocher
-function afficherImages() {
-    var checkbox1 = document.getElementById('img1');
-    var checkbox2 = document.getElementById('img2');
-    var checkbox3 = document.getElementById('img3');
-    
-    // Afficher ou cacher les images en fonction des cases à cocher
-    if (checkbox1.checked) {
-        document.getElementById('image1').style.display = 'block';
-    } else {
-        document.getElementById('image1').style.display = 'none';
-    }
-    
-    if (checkbox2.checked) {
-        document.getElementById('image2').style.display = 'block';
-    } else {
-        document.getElementById('image2').style.display = 'none';
-    }
-    
-    if (checkbox3.checked) {
-        document.getElementById('image3').style.display = 'block';
-    } else {
-        document.getElementById('image3').style.display = 'none';
-    }
-}
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afficher ou cacher des images</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Orbitron', sans-serif;
+            margin: 20px;
+            background-color: #0d0d0d;
+            color: #00e6e6;
+            text-shadow: 0 0 5px #00e6e6;
+        }
+        h1 {
+            color: #ff0099;
+            text-shadow: 0 0 10px #ff0099, 0 0 20px #ff0099, 0 0 30px #ff0099;
+        }
+        p {
+            font-size: 18px;
+        }
+        .checkbox-container {
+            margin: 20px 0;
+            background-color: #1a1a1a;
+            padding: 15px;
+            border-radius: 5px;
+            border: 2px solid #ff0099;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+        .checkbox-container:hover {
+            transform: scale(1.05);
+            border-color: #00e6e6;
+            box-shadow: 0 0 10px #00e6e6, 0 0 20px #00e6e6;
+        }
+        .checkbox-container input {
+            margin-right: 10px;
+        }
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+    <script>
+        // Fonction pour afficher ou masquer les images en fonction des cases à cocher
+        function afficherImages() {
+            var checkbox1 = document.getElementById('img1');
+            var checkbox2 = document.getElementById('img2');
+            var checkbox3 = document.getElementById('img3');
+            
+            // Afficher ou cacher les images en fonction des cases à cocher
+            if (checkbox1.checked) {
+                document.getElementById('image1').style.display = 'block';
+            } else {
+                document.getElementById('image1').style.display = 'none';
+            }
+            
+            if (checkbox2.checked) {
+                document.getElementById('image2').style.display = 'block';
+            } else {
+                document.getElementById('image2').style.display = 'none';
+            }
+            
+            if (checkbox3.checked) {
+                document.getElementById('image3').style.display = 'block';
+            } else {
+                document.getElementById('image3').style.display = 'none';
+            }
+        }
+    </script>
 </head>
 <body>
-<h1>Afficher ou cacher des images</h1>
+    <h1>Afficher ou cacher des images</h1>
+    <p>Cochez les cases pour afficher ou masquer les images :</p>
 
-<p>Cochez les cases pour afficher les images :</p>
-<p>
-    <input type="checkbox" id="img1" onclick="afficherImages()"> Image 1
-    <input type="checkbox" id="img2" onclick="afficherImages()"> Image 2
-    <input type="checkbox" id="img3" onclick="afficherImages()"> Image 3
-</p>
+    <!-- Section des cases à cocher pour afficher/masquer les images -->
+    <div class="checkbox-container">
+        <input type="checkbox" id="img1" onclick="afficherImages()"> Image 1
+        <input type="checkbox" id="img2" onclick="afficherImages()"> Image 2
+        <input type="checkbox" id="img3" onclick="afficherImages()"> Image 3
+    </div>
 
-<!-- Images initialement cachées -->
-<img id="image1" src="https://github.com/tonutilisateur/tonrepo/raw/main/static/images/image1.jpg" alt="Image 1" style="display:none; width:300px;">
-<img id="image2" src="https://github.com/tonutilisateur/tonrepo/raw/main/static/images/image2.jpg" alt="Image 2" style="display:none; width:300px;">
-<img id="image3" src="https://github.com/tonutilisateur/tonrepo/raw/main/static/images/image3.jpg" alt="Image 3" style="display:none; width:300px;">
+    <!-- Images initialement cachées -->
+    <div class="tooltip">
+        <img id="image1" src="https://github.com/tonutilisateur/tonrepo/raw/main/static/images/image1.jpg" alt="Image 1" style="display:none; width:300px;">
+        <span class="tooltiptext">Image 1</span>
+    </div>
+    
+    <div class="tooltip">
+        <img id="image2" src="https://github.com/tonutilisateur/tonrepo/raw/main/static/images/image2.jpg" alt="Image 2" style="display:none; width:300px;">
+        <span class="tooltiptext">Image 2</span>
+    </div>
+    
+    <div class="tooltip">
+        <img id="image3" src="https://github.com/tonutilisateur/tonrepo/raw/main/static/images/image3.jpg" alt="Image 3" style="display:none; width:300px;">
+        <span class="tooltiptext">Image 3</span>
+    </div>
 </body>
 </html>
