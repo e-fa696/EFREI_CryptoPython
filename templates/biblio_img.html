@@ -1,24 +1,64 @@
-<html>
+<!doctype html>
+<html lang="fr">
 <head>
-<script>
-function affichage(){
-	alert("Tout es OK !");
-}
-function cacher(){
-	document.getElementById('DuTexte').style.display="None";
-}
-function presenter(){
-	document.getElementById('DuTexte').style.display="Block";
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoPython - Sélection d'images</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .image-gallery img {
+            width: 200px;
+            height: auto;
+            border: 2px solid #2c3e50;
+            border-radius: 5px;
+            transition: transform 0.3s, border-color 0.3s;
+            cursor: pointer;
+        }
+        .image-gallery img:hover {
+            transform: scale(1.05);
+            border-color: #3498db;
+        }
+        .selected {
+            box-shadow: 0 0 10px #3498db, 0 0 20px #3498db;
+        }
+    </style>
+    <script>
+        function affichage(){
+            alert("Tout est OK !");
+        }
+        function cacher(){
+            document.getElementById('DuTexte').style.display="none";
+        }
+        function presenter(){
+            document.getElementById('DuTexte').style.display="block";
+        }
 
-function controler(){
-	if(document.getElementById('Control').checked){
-			alert("Bouton option coché");
-		}
-	else{alert("Bouton option NON coché");}		
-}
+        function controler(){
+            if(document.getElementById('Control').checked){
+                alert("Bouton option coché");
+            } else {
+                alert("Bouton option NON coché");
+            }       
+        }
 
-</script>
+        function toggleSelection(image) {
+            image.classList.toggle('selected');
+        }
+    </script>
 </head>
 <body>
 <h1>Mes outils</h1>
@@ -32,7 +72,12 @@ function controler(){
 <hr/>
 <p>Option<input type="checkbox" id="Control"></p>
 <button onclick="controler()">Check</button>
-
-
+<hr/>
+<h2>Sélectionnez vos images</h2>
+<div class="image-gallery">
+    <img src="static/images/image1.jpg" alt="Image 1" onclick="toggleSelection(this)">
+    <img src="static/images/image2.jpg" alt="Image 2" onclick="toggleSelection(this)">
+    <img src="static/images/image3.jpg" alt="Image 3" onclick="toggleSelection(this)">
+</div>
 </body>
 </html>
