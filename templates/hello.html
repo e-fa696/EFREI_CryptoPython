@@ -1,23 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bibliothèque d'images</title>
-    <script>
-        function afficherImage(checkboxId, imageId) {
-            const checkbox = document.getElementById(checkboxId);
-            const image = document.getElementById(imageId);
-            if (checkbox.checked) {
-                image.style.display = "block";
-            } else {
-                image.style.display = "none";
-            }
-        }
-    </script>
+    <title>CryptoPython</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
+        
         body {
             font-family: 'Orbitron', sans-serif;
             margin: 20px;
@@ -25,76 +15,102 @@
             color: #00e6e6;
             text-shadow: 0 0 5px #00e6e6;
         }
-
         h1 {
             color: #ff0099;
             text-shadow: 0 0 10px #ff0099, 0 0 20px #ff0099, 0 0 30px #ff0099;
-            text-align: center;
         }
-
-        h2 {
-            color: #00e6e6;
-            text-align: center;
-            font-size: 20px;
-            margin-bottom: 20px;
+        ul {
+            list-style-type: none;
+            padding: 0;
         }
-
-        .image-container {
-            margin: 15px 0;
-            padding: 10px;
+        li {
+            margin: 10px 0;
             background-color: #1a1a1a;
-            border-radius: 8px;
+            padding: 10px;
+            border-radius: 5px;
             border: 2px solid #ff0099;
             transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            cursor: pointer;
         }
-
-        .image-container:hover {
+        li:hover {
             transform: scale(1.05);
             border-color: #00e6e6;
             box-shadow: 0 0 10px #00e6e6, 0 0 20px #00e6e6;
         }
-
-        img {
-            display: none; /* Masqué par défaut */
-            max-width: 100%;
-            border-radius: 8px;
-            margin-top: 10px;
-            box-shadow: 0 0 10px rgba(0, 230, 230, 0.5);
+        a {
+            text-decoration: none;
+            color: #00e6e6;
+            display: block;
+            text-align: center;
+            transition: color 0.3s;
         }
-
-        input[type="checkbox"] {
-            margin-right: 10px;
-            transform: scale(1.2);
-            cursor: pointer;
+        a:hover {
+            color: #ff0099;
+        }
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
         }
     </style>
 </head>
 <body>
-    <h1>Bibliothèque d'images</h1>
-    <h2>Choisissez des images à afficher</h2>
+    <h1>Bienvenue dans votre atelier CryptoPython !</h1>
+    <p>Choisissez une option :</p>
+    <ul>
+        <li class="tooltip"><a href="/exercice1">Exercice 1 : Première page HTML</a>
+            <span class="tooltiptext">Commencez avec HTML</span>
+        </li>
+        <li class="tooltip"><a href="/exercice2">Exercice 2 : Page structurée</a>
+            <span class="tooltiptext">Apprenez la structure HTML</span>
+        </li>
+        <li class="tooltip"><a href="/exercice3">Exercice 3 : Formulaire</a>
+            <span class="tooltiptext">Créez des formulaires</span>
+        </li>
+        <li class="tooltip"><a href="/exercice4">Exercice 4 : Mini-CV</a>
+            <span class="tooltiptext">Rédigez un CV</span>
+        </li>
+        <li class="tooltip"><a href="/exercice5">Exercice 5 : Site avec cadres</a>
+            <span class="tooltiptext">Utilisez des cadres</span>
+        </li>
+        <li class="tooltip"><a href="/Exemple_Base_SVG">Cours : Voir ce qui se passe</a>
+            <span class="tooltiptext">Explorez SVG</span>
+        </li>
+        <li class="tooltip"><a href="/Maison">Maison</a>
+            <span class="tooltiptext">Construisez une maison</span>
+        </li>
+        <li class="tooltip"><a href="/jack">Jack</a>
+            <span class="tooltiptext">Jack et ses aventures</span>
+        </li>
+        <li class="tooltip"><a href="/chenille">Chenille</a>
+            <span class="tooltiptext">Animation de chenille</span>
+        </li>
+        <li class="tooltip"><a href="/jeu_de_des">Jeu de dés</a>
+            <span class="tooltiptext">Lancez les dés</span>
+        </li>
+        <li class="tooltip"><a href="/biblio_img">Bibliothéque images</a>
+            <span class="tooltiptext">Bibliothéque images</span>
+        </li>
 
-    <div class="image-container">
-        <label>
-            <input type="checkbox" id="checkbox1" onclick="afficherImage('checkbox1', 'image1')">
-            Image 1
-        </label>
-        <img id="image1" src="/static/images/geda.jpg" alt="Image 1">
-    </div>
-
-    <div class="image-container">
-        <label>
-            <input type="checkbox" id="checkbox2" onclick="afficherImage('checkbox2', 'image2')">
-            Image 2
-        </label>
-        <img id="image2" src="/static/images/jlr.jpg" alt="Image 2">
-    </div>
-
-    <div class="image-container">
-        <label>
-            <input type="checkbox" id="checkbox3" onclick="afficherImage('checkbox3', 'image3')">
-            Image 3
-        </label>
-        <img id="image3" src="/static/images/tyler_mugshot.jpg" alt="Image 3">
-    </div>
+    </ul>
 </body>
 </html>
