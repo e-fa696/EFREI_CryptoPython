@@ -55,7 +55,7 @@ def jeu_de_des():
 
 @app.route('/biblio_img')
 def biblio_img():
-    return render_template('biblio_img')
+    return render_template('biblio_img.html')
 
 
 
