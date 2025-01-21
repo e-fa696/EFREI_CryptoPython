@@ -53,9 +53,9 @@ def chenille():
 def jeu_de_des():
     return render_template('jeu_de_des.html')
 
-@app.route('/biblio_img')
-def biblio_img():
-    return render_template('biblio_img.html')
+#@app.route('/biblio_img')
+#def biblio_img():
+ #   return render_template('biblio_img.html')
 
 
 
