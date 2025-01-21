@@ -13,9 +13,9 @@ def accueil():
     return render_template('hello.html')
 
 # Routes pour chaque exercice
-@app.route('/exercice1')
-def exercice1():
-    return render_template('page1.html')
+#@app.route('/exercice1')
+#def exercice1():
+    #return render_template('page1.html')
 
 @app.route('/exercice2')
 def exercice2():
@@ -53,9 +53,9 @@ def chenille():
 def jeu_de_des():
     return render_template('jeu_de_des.html')
 
-#@app.route('/biblio_img')
-#def biblio_img():
- #   return render_template('biblio_img.html')
+@app.route('/biblio_img')
+def biblio_img():
+return render_template('biblio_img.html')
 
 
 
