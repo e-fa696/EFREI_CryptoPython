@@ -49,6 +49,10 @@ def jack():
 def chenille():
     return render_template('chenille.html')
 
+@app.route('/jeu_de_des')
+def jeu_de_des():
+    return render_template('jeu_de_des.html')
+
 
     
 # Route pour crypter une valeur
