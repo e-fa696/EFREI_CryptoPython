@@ -54,10 +54,6 @@
             }       
         }
 
-        function toggleSelection(image) {
-            image.classList.toggle('selected');
-        }
-
         function afficherCacherImages() {
             var checkboxes = document.querySelectorAll('.image-checkbox');
             checkboxes.forEach(function(checkbox) {
@@ -90,9 +86,9 @@
 <p><input type="checkbox" class="image-checkbox" value="img3" onclick="afficherCacherImages()"> Image 3</p>
 
 <div class="image-gallery">
-    <img id="img1" src="static/images/image1.pnj" alt="Image 1">
-    <img id="img2" src="static/images/image2.pnj" alt="Image 2">
-    <img id="img3" src="static/images/image3.pnj" alt="Image 3">
+    <img id="img1" src="https://raw.githubusercontent.com/VOTRE_GITHUB_UTILISATEUR/VOTRE_DEPOT/main/static/images/image1.jpg" alt="Image 1">
+    <img id="img2" src="https://raw.githubusercontent.com/VOTRE_GITHUB_UTILISATEUR/VOTRE_DEPOT/main/static/images/image2.jpg" alt="Image 2">
+    <img id="img3" src="https://raw.githubusercontent.com/VOTRE_GITHUB_UTILISATEUR/VOTRE_DEPOT/main/static/images/image3.jpg" alt="Image 3">
 </div>
 </body>
 </html>
