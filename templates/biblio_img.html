@@ -1,12 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afficher ou cacher des images</title>
+    <title>Bibliothèque d'images</title>
+    <script>
+        function afficherImage(checkboxId, imageId) {
+            const checkbox = document.getElementById(checkboxId);
+            const image = document.getElementById(imageId);
+            if (checkbox.checked) {
+                image.style.display = "block";
+            } else {
+                image.style.display = "none";
+            }
+        }
+    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-        
+
         body {
             font-family: 'Orbitron', sans-serif;
             margin: 20px;
@@ -14,107 +25,76 @@
             color: #00e6e6;
             text-shadow: 0 0 5px #00e6e6;
         }
+
         h1 {
             color: #ff0099;
             text-shadow: 0 0 10px #ff0099, 0 0 20px #ff0099, 0 0 30px #ff0099;
+            text-align: center;
         }
-        p {
-            font-size: 18px;
+
+        h2 {
+            color: #00e6e6;
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 20px;
         }
-        .checkbox-container {
-            margin: 20px 0;
+
+        .image-container {
+            margin: 15px 0;
+            padding: 10px;
             background-color: #1a1a1a;
-            padding: 15px;
-            border-radius: 5px;
+            border-radius: 8px;
             border: 2px solid #ff0099;
             transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
         }
-        .checkbox-container:hover {
+
+        .image-container:hover {
             transform: scale(1.05);
             border-color: #00e6e6;
             box-shadow: 0 0 10px #00e6e6, 0 0 20px #00e6e6;
         }
-        .checkbox-container input {
+
+        img {
+            display: none; /* Masqué par défaut */
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+            box-shadow: 0 0 10px rgba(0, 230, 230, 0.5);
+        }
+
+        input[type="checkbox"] {
             margin-right: 10px;
-        }
-        .tooltip {
-            position: relative;
-            display: inline-block;
-        }
-        .tooltip .tooltiptext {
-            visibility: hidden;
-            width: 120px;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            border-radius: 5px;
-            padding: 5px;
-            position: absolute;
-            z-index: 1;
-            bottom: 125%;
-            left: 50%;
-            margin-left: -60px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
-            opacity: 1;
+            transform: scale(1.2);
+            cursor: pointer;
         }
     </style>
-    <script>
-        // Fonction pour afficher ou masquer les images en fonction des cases à cocher
-        function afficherImages() {
-            var checkbox1 = document.getElementById('img1');
-            var checkbox2 = document.getElementById('img2');
-            var checkbox3 = document.getElementById('img3');
-            
-            // Afficher ou cacher les images en fonction des cases à cocher
-            if (checkbox1.checked) {
-                document.getElementById('image1').style.display = 'block';
-            } else {
-                document.getElementById('image1').style.display = 'none';
-            }
-            
-            if (checkbox2.checked) {
-                document.getElementById('image2').style.display = 'block';
-            } else {
-                document.getElementById('image2').style.display = 'none';
-            }
-            
-            if (checkbox3.checked) {
-                document.getElementById('image3').style.display = 'block';
-            } else {
-                document.getElementById('image3').style.display = 'none';
-            }
-        }
-    </script>
 </head>
 <body>
-    <h1>Afficher ou cacher des images</h1>
-    <p>Cochez les cases pour afficher ou masquer les images :</p>
+    <h1>Bibliothèque d'images</h1>
+    <h2>Choisissez des images à afficher</h2>
 
-    <!-- Section des cases à cocher pour afficher/masquer les images -->
-    <div class="checkbox-container">
-        <input type="checkbox" id="img1" onclick="afficherImages()"> Image 1
-        <input type="checkbox" id="img2" onclick="afficherImages()"> Image 2
-        <input type="checkbox" id="img3" onclick="afficherImages()"> Image 3
+    <div class="image-container">
+        <label>
+            <input type="checkbox" id="checkbox1" onclick="afficherImage('checkbox1', 'image1')">
+            Image 1
+        </label>
+        <img id="image1" src="/static/images/geda.jpg" alt="Image 1">
     </div>
 
-    <!-- Images initialement cachées -->
-    <div class="tooltip">
-        <img id="image1" src="https://github.com/tonutilisateur/tonrepo/raw/main/static/images/image1.jpg" alt="Image 1" style="display:none; width:300px;">
-        <span class="tooltiptext">Image 1</span>
+    <div class="image-container">
+        <label>
+            <input type="checkbox" id="checkbox2" onclick="afficherImage('checkbox2', 'image2')">
+            Image 2
+        </label>
+        <img id="image2" src="/static/images/jlr.jpg" alt="Image 2">
     </div>
-    
-    <div class="tooltip">
-        <img id="image2" src="https://github.com/tonutilisateur/tonrepo/raw/main/static/images/image2.jpg" alt="Image 2" style="display:none; width:300px;">
-        <span class="tooltiptext">Image 2</span>
-    </div>
-    
-    <div class="tooltip">
-        <img id="image3" src="https://github.com/tonutilisateur/tonrepo/raw/main/static/images/image3.jpg" alt="Image 3" style="display:none; width:300px;">
-        <span class="tooltiptext">Image 3</span>
+
+    <div class="image-container">
+        <label>
+            <input type="checkbox" id="checkbox3" onclick="afficherImage('checkbox3', 'image3')">
+            Image 3
+        </label>
+        <img id="image3" src="/static/images/tyler_mugshot.jpg" alt="Image 3">
     </div>
 </body>
 </html>
