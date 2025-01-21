@@ -6,7 +6,7 @@
     <title>CryptoPython</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-
+        
         body {
             font-family: 'Orbitron', sans-serif;
             margin: 20px;
@@ -29,6 +29,7 @@
             border-radius: 5px;
             border: 2px solid #ff0099;
             transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            cursor: pointer;
         }
         li:hover {
             transform: scale(1.05);
@@ -45,22 +46,29 @@
         a:hover {
             color: #ff0099;
         }
-        .neon-button {
+        .tooltip {
+            position: relative;
             display: inline-block;
-            padding: 10px 20px;
-            margin: 20px 0;
-            background-color: #0d0d0d;
-            color: #00e6e6;
-            border: 2px solid #00e6e6;
-            text-transform: uppercase;
-            font-weight: bold;
-            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
-            cursor: pointer;
         }
-        .neon-button:hover {
-            background-color: #00e6e6;
-            color: #0d0d0d;
-            box-shadow: 0 0 10px #00e6e6, 0 0 20px #00e6e6, 0 0 30px #00e6e6;
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
         }
     </style>
 </head>
@@ -68,17 +76,36 @@
     <h1>Bienvenue dans votre atelier CryptoPython !</h1>
     <p>Choisissez une option :</p>
     <ul>
-        <li><a href="/exercice1">Exercice 1 : Première page HTML</a></li>
-        <li><a href="/exercice2">Exercice 2 : Page structurée</a></li>
-        <li><a href="/exercice3">Exercice 3 : Formulaire</a></li>
-        <li><a href="/exercice4">Exercice 4 : Mini-CV</a></li>
-        <li><a href="/exercice5">Exercice 5 : Site avec cadres</a></li>
-        <li><a href="/Exemple_Base_SVG">Cours : Voir ce qui se passe</a></li>
-        <li><a href="/Maison">Maison</a></li>
-        <li><a href="/jack">Jack</a></li>
-        <li><a href="/chenille">Chenille</a></li>
-        <li><a href="/jeu_de_des">Jeu de dés</a></li>
+        <li class="tooltip"><a href="/exercice1">Exercice 1 : Première page HTML</a>
+            <span class="tooltiptext">Commencez avec HTML</span>
+        </li>
+        <li class="tooltip"><a href="/exercice2">Exercice 2 : Page structurée</a>
+            <span class="tooltiptext">Apprenez la structure HTML</span>
+        </li>
+        <li class="tooltip"><a href="/exercice3">Exercice 3 : Formulaire</a>
+            <span class="tooltiptext">Créez des formulaires</span>
+        </li>
+        <li class="tooltip"><a href="/exercice4">Exercice 4 : Mini-CV</a>
+            <span class="tooltiptext">Rédigez un CV</span>
+        </li>
+        <li class="tooltip"><a href="/exercice5">Exercice 5 : Site avec cadres</a>
+            <span class="tooltiptext">Utilisez des cadres</span>
+        </li>
+        <li class="tooltip"><a href="/Exemple_Base_SVG">Cours : Voir ce qui se passe</a>
+            <span class="tooltiptext">Explorez SVG</span>
+        </li>
+        <li class="tooltip"><a href="/Maison">Maison</a>
+            <span class="tooltiptext">Construisez une maison</span>
+        </li>
+        <li class="tooltip"><a href="/jack">Jack</a>
+            <span class="tooltiptext">Jack et ses aventures</span>
+        </li>
+        <li class="tooltip"><a href="/chenille">Chenille</a>
+            <span class="tooltiptext">Animation de chenille</span>
+        </li>
+        <li class="tooltip"><a href="/jeu_de_des">Jeu de dés</a>
+            <span class="tooltiptext">Lancez les dés</span>
+        </li>
     </ul>
-    <div class="neon-button">Cyberpunk 2077</div>
 </body>
 </html>
