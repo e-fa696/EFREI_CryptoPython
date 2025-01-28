@@ -108,7 +108,7 @@
 
             // Vérifier si la chambre sélectionnée est chargée
             if (chamberElement && chamberElement.classList.contains('loaded')) {
-                alert(`Perdu : la chambre ${randomChamber} était chargée ! Vous avez tout perdu.`);
+                alert(`Perdu : la chambre bleue ${randomChamber} était chargée ! Vous avez tout perdu.`);
                 totalGains = 0; // Réinitialiser les gains
             } else {
                 // Calculer les gains en fonction du nombre de chambres chargées
@@ -126,16 +126,14 @@
                         break;
                 }
                 totalGains += gain;
-                alert(`Gagné : la chambre ${randomChamber} était vide ! Vous avez chargé les chambres ${loadedChamberNumbers.join(', ')}.
+                alert(`Gagné : la chambre bleue ${randomChamber} était vide !
+Vous avez chargé les chambres : ${loadedChamberNumbers.join(', ')}.
 Gains : ${gain}€.
 Gains totaux : ${totalGains}€.`);
             }
 
             // Mettre à jour l'affichage des gains
             document.getElementById('gains').textContent = `Gains totaux : ${totalGains}€`;
-
-            // Réinitialiser toutes les chambres pour un nouveau tour
-            resetChambers();
         }
 
         function resetChambers() {
