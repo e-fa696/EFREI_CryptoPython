@@ -57,6 +57,10 @@ def jeu_de_des():
 def biblio_img():
     return render_template('biblio_img.html')
 
+@app.route('/roulette')
+def biblio_img():
+    return render_template('roulette.html')
+
 
 
     
