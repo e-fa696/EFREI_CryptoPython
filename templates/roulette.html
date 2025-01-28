@@ -1,28 +1,71 @@
-</html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-<script>
-function lancer(){
-          alert("le barillet tourne");
-}
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roulette Russe</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
-
+        body {
+            font-family: 'Orbitron', sans-serif;
+            margin: 20px;
+            background-color: #0d0d0d;
+            color: #00e6e6;
+            text-shadow: 0 0 5px #00e6e6;
+            text-align: center;
+        }
+        h1 {
+            color: #ff0099;
+            text-shadow: 0 0 10px #ff0099, 0 0 20px #ff0099, 0 0 30px #ff0099;
+        }
+        button {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #1a1a1a;
+            color: #00e6e6;
+            border: 2px solid #ff0099;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+        button:hover {
+            transform: scale(1.1);
+            border-color: #00e6e6;
+            box-shadow: 0 0 10px #00e6e6, 0 0 20px #00e6e6;
+        }
+        svg {
+            margin: 20px auto;
+            display: block;
+            background-color: #1a1a1a;
+            border: 2px solid #ff0099;
+            border-radius: 10px;
+        }
+        circle {
+            stroke: black;
+            stroke-width: 3;
+            fill: gray;
+        }
+    </style>
+    <script>
+        function lancer() {
+            alert("le barillet tourne");
+        }
+    </script>
 </head>
 <body>
-	<h1>Roulette Russe</h1>
-
-	<svg width=200 height=200 style="background-color:antiquewhite">
-	<circle cx="100" cy="100" r="95" stroke="black" stroke-width="3" fill="none" />
-	<circle id="Br1" cx="100" cy="40" r="25" stroke="black" stroke-width="3" fill="gray" />
-	<circle id="Br2" cx="150" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" />
-	<circle id="Br3" cx="50" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" />
-	<circle id="Br4" cx="50" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
-	<circle id="Br5" cx="150" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" />
-	<circle id="Br6" cx="100" cy="160" r="25" stroke="black" stroke-width="3" fill="gray" />
-	<circle cx="100" cy="100" r="10" stroke="black" stroke-width="3" fill="black" />
-	</svg>	
-	
-	<button onclick="lancer()">Jouer</button>	
-	
+    <h1>Roulette Russe</h1>
+    <svg width="200" height="200">
+        <circle cx="100" cy="100" r="95" />
+        <circle id="Br1" cx="100" cy="40" r="25" />
+        <circle id="Br2" cx="150" cy="70" r="25" />
+        <circle id="Br3" cx="50" cy="70" r="25" />
+        <circle id="Br4" cx="50" cy="130" r="25" />
+        <circle id="Br5" cx="150" cy="130" r="25" />
+        <circle id="Br6" cx="100" cy="160" r="25" />
+        <circle cx="100" cy="100" r="10" fill="black" />
+    </svg>
+    <button onclick="lancer()">Jouer</button>
 </body>
 </html>
