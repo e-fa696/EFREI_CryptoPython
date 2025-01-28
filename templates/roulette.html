@@ -50,7 +50,7 @@
             transition: fill 0.3s;
         }
         .loaded {
-            fill: gold;
+            fill: red;
         }
     </style>
     <script>
@@ -69,7 +69,12 @@
 
         function lancer() {
             const randomChamber = Math.floor(Math.random() * 6) + 1;
-            alert(`Chiffre aléatoire tiré : ${randomChamber}`);
+            const chamberElement = document.getElementById(`Br${randomChamber}`);
+            if (chamberElement && chamberElement.classList.contains('loaded')) {
+                alert("Perdu : la chambre sélectionnée est chargée !");
+            } else {
+                alert("Gagné : la chambre sélectionnée est vide !");
+            }
         }
     </script>
 </head>
