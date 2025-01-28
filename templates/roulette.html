@@ -46,26 +46,36 @@
             stroke: black;
             stroke-width: 3;
             fill: gray;
+            cursor: pointer;
+        }
+        .loaded {
+            fill: red;
         }
     </style>
     <script>
-        function lancer() {
-            alert("le barillet tourne");
+        function toggleChamber(chamberId) {
+            const chamber = document.getElementById(chamberId);
+            if (chamber.classList.contains('loaded')) {
+                chamber.classList.remove('loaded');
+                alert(`Chambre ${chamberId.replace('Br', '')} déchargée.`);
+            } else {
+                chamber.classList.add('loaded');
+                alert(`Chambre ${chamberId.replace('Br', '')} chargée.`);
+            }
         }
     </script>
 </head>
 <body>
     <h1>Roulette Russe</h1>
     <svg width="200" height="200">
-        <circle cx="100" cy="100" r="95" />
-        <circle id="Br1" cx="100" cy="40" r="25" />
-        <circle id="Br2" cx="150" cy="70" r="25" />
-        <circle id="Br3" cx="50" cy="70" r="25" />
-        <circle id="Br4" cx="50" cy="130" r="25" />
-        <circle id="Br5" cx="150" cy="130" r="25" />
-        <circle id="Br6" cx="100" cy="160" r="25" />
+        <circle id="Br1" cx="100" cy="40" r="25" onclick="toggleChamber('Br1')" />
+        <circle id="Br2" cx="150" cy="70" r="25" onclick="toggleChamber('Br2')" />
+        <circle id="Br3" cx="50" cy="70" r="25" onclick="toggleChamber('Br3')" />
+        <circle id="Br4" cx="50" cy="130" r="25" onclick="toggleChamber('Br4')" />
+        <circle id="Br5" cx="150" cy="130" r="25" onclick="toggleChamber('Br5')" />
+        <circle id="Br6" cx="100" cy="160" r="25" onclick="toggleChamber('Br6')" />
         <circle cx="100" cy="100" r="10" fill="black" />
     </svg>
-    <button onclick="lancer()">Jouer</button>
+    <p>Cliquez sur une chambre pour la charger ou la décharger.</p>
 </body>
 </html>
