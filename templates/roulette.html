@@ -52,12 +52,24 @@
         .loaded {
             fill: red;
         }
+        .selected {
+            fill: blue;
+        }
     </style>
     <script>
-        const loadedChambers = new Set();
+        const loadedChambers = new Set(); // Chambres chargées
+        let totalGains = 0; // Gains cumulés
 
         function toggleChamber(chamberId) {
             const chamber = document.getElementById(chamberId);
+
+            // Limiter la sélection à 3 chambres
+            if (!loadedChambers.has(chamberId) && loadedChambers.size >= 3) {
+                alert("Vous ne pouvez sélectionner que 3 chambres au maximum !");
+                return;
+            }
+
+            // Ajouter ou retirer la chambre sélectionnée
             if (loadedChambers.has(chamberId)) {
                 loadedChambers.delete(chamberId);
                 chamber.classList.remove('loaded');
@@ -68,12 +80,47 @@
         }
 
         function lancer() {
+            if (loadedChambers.size === 0) {
+                alert("Veuillez charger au moins une chambre avant de jouer.");
+                return;
+            }
+
+            // Sélectionner une chambre bleue au hasard
             const randomChamber = Math.floor(Math.random() * 6) + 1;
             const chamberElement = document.getElementById(`Br${randomChamber}`);
+            chamberElement.classList.add('selected');
+
+            // Vérifier si la chambre sélectionnée est chargée
             if (chamberElement && chamberElement.classList.contains('loaded')) {
-                alert("Perdu : la chambre sélectionnée est chargée !");
+                alert("Perdu : la chambre sélectionnée était chargée ! Vous avez tout perdu.");
+                totalGains = 0; // Réinitialiser les gains
             } else {
-                alert("Gagné : la chambre sélectionnée est vide !");
+                // Calculer les gains en fonction du nombre de chambres chargées
+                let gain = 0;
+                switch (loadedChambers.size) {
+                    case 1:
+                        gain = 10000;
+                        break;
+                    case 2:
+                        gain = 100000;
+                        break;
+                    case 3:
+                        gain = 1000000;
+                        break;
+                }
+                totalGains += gain;
+                alert(`Gagné : la chambre sélectionnée était vide ! Vous gagnez ${gain}€.\nGains totaux : ${totalGains}€.`);
+            }
+
+            // Réinitialiser les chambres pour une nouvelle partie
+            resetChambers();
+        }
+
+        function resetChambers() {
+            loadedChambers.clear();
+            for (let i = 1; i <= 6; i++) {
+                const chamber = document.getElementById(`Br${i}`);
+                chamber.classList.remove('loaded', 'selected');
             }
         }
     </script>
@@ -89,7 +136,8 @@
         <circle id="Br6" cx="100" cy="160" r="25" onclick="toggleChamber('Br6')" />
         <circle cx="100" cy="100" r="10" fill="black" />
     </svg>
-    <p>Cliquez sur une chambre pour la charger ou la décharger.</p>
+    <p>Cliquez sur une chambre pour la charger ou la décharger (max. 3).</p>
     <button onclick="lancer()">Jouer</button>
+    <p id="gains">Gains totaux : 0€</p>
 </body>
 </html>
