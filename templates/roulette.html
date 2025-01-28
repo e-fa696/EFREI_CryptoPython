@@ -47,20 +47,31 @@
             stroke-width: 3;
             fill: gray;
             cursor: pointer;
+            transition: fill 0.3s;
         }
         .loaded {
-            fill: yellow;
+            fill: gold;
         }
     </style>
     <script>
+        const loadedChambers = new Set();
+
         function toggleChamber(chamberId) {
             const chamber = document.getElementById(chamberId);
-            if (chamber.classList.contains('loaded')) {
+            if (loadedChambers.has(chamberId)) {
+                loadedChambers.delete(chamberId);
                 chamber.classList.remove('loaded');
-                setTimeout(() => alert(`Chambre ${chamberId.replace('Br', '')} déchargée.`), 100);
             } else {
+                loadedChambers.add(chamberId);
                 chamber.classList.add('loaded');
-                setTimeout(() => alert(`Chambre ${chamberId.replace('Br', '')} chargée.`), 100);
+            }
+        }
+
+        function lancer() {
+            if (loadedChambers.size > 0) {
+                alert(`Les chambres chargées sont : ${Array.from(loadedChambers).map(id => id.replace('Br', '')).join(', ')}`);
+            } else {
+                alert("Aucune chambre n'est chargée.");
             }
         }
     </script>
@@ -77,5 +88,6 @@
         <circle cx="100" cy="100" r="10" fill="black" />
     </svg>
     <p>Cliquez sur une chambre pour la charger ou la décharger.</p>
+    <button onclick="lancer()">Lancer</button>
 </body>
 </html>
