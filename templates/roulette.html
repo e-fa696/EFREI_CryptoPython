@@ -92,9 +92,6 @@
                 return;
             }
 
-            // Réinitialiser toutes les chambres avant de jouer
-            resetChambers();
-
             // Sélectionner une chambre bleue au hasard
             const randomChamber = Math.floor(Math.random() * 6) + 1;
             selectedChamber = `Br${randomChamber}`;
@@ -125,7 +122,8 @@ Gains : ${gain}€.
 Gains totaux : ${totalGains}€.`);
             }
 
-            // Mettre à jour l'affichage des gains
+            // Mettre à jour l'affichage des gains après réinitialisation des chambres
+            resetChambers();
             document.getElementById('gains').textContent = `Gains totaux : ${totalGains}€`;
         }
 
