@@ -85,6 +85,11 @@
                 return;
             }
 
+            // Réinitialiser la couleur bleue des chambres précédentes
+            document.querySelectorAll('.selected').forEach(chamber => {
+                chamber.classList.remove('selected');
+            });
+
             // Sélectionner une chambre bleue au hasard
             const randomChamber = Math.floor(Math.random() * 6) + 1;
             const chamberElement = document.getElementById(`Br${randomChamber}`);
@@ -114,9 +119,6 @@
 
             // Mettre à jour l'affichage des gains
             document.getElementById('gains').textContent = `Gains totaux : ${totalGains}€`;
-
-            // Réinitialiser les chambres pour une nouvelle partie
-            resetChambers();
         }
 
         function resetChambers() {
