@@ -57,10 +57,10 @@
             const chamber = document.getElementById(chamberId);
             if (chamber.classList.contains('loaded')) {
                 chamber.classList.remove('loaded');
-                alert(`Chambre ${chamberId.replace('Br', '')} déchargée.`);
+                setTimeout(() => alert(`Chambre ${chamberId.replace('Br', '')} déchargée.`), 100);
             } else {
                 chamber.classList.add('loaded');
-                alert(`Chambre ${chamberId.replace('Br', '')} chargée.`);
+                setTimeout(() => alert(`Chambre ${chamberId.replace('Br', '')} chargée.`), 100);
             }
         }
     </script>
