@@ -94,7 +94,10 @@
 
             // Réinitialiser la couleur bleue des chambres précédentes
             if (selectedChamber) {
-                document.getElementById(selectedChamber).classList.remove('selected');
+                const previousBlueChamber = document.getElementById(selectedChamber);
+                if (previousBlueChamber) {
+                    previousBlueChamber.classList.remove('selected');
+                }
             }
 
             // Sélectionner une chambre bleue au hasard
@@ -127,6 +130,9 @@
 
             // Mettre à jour l'affichage des gains
             document.getElementById('gains').textContent = `Gains totaux : ${totalGains}€`;
+
+            // Réinitialiser toutes les chambres pour un nouveau tour
+            resetChambers();
         }
 
         function resetChambers() {
