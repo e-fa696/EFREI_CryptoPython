@@ -59,9 +59,16 @@
     <script>
         const loadedChambers = new Set(); // Chambres chargées
         let totalGains = 0; // Gains cumulés
+        let selectedChamber = null; // Chambre bleue sélectionnée
 
         function toggleChamber(chamberId) {
             const chamber = document.getElementById(chamberId);
+
+            // Empêcher la sélection d'une chambre bleue
+            if (selectedChamber === chamberId) {
+                alert("Cette chambre est actuellement bleue et ne peut pas être chargée ou déchargée.");
+                return;
+            }
 
             // Limiter la sélection à 3 chambres
             if (!loadedChambers.has(chamberId) && loadedChambers.size >= 3) {
@@ -86,13 +93,14 @@
             }
 
             // Réinitialiser la couleur bleue des chambres précédentes
-            document.querySelectorAll('.selected').forEach(chamber => {
-                chamber.classList.remove('selected');
-            });
+            if (selectedChamber) {
+                document.getElementById(selectedChamber).classList.remove('selected');
+            }
 
             // Sélectionner une chambre bleue au hasard
             const randomChamber = Math.floor(Math.random() * 6) + 1;
-            const chamberElement = document.getElementById(`Br${randomChamber}`);
+            selectedChamber = `Br${randomChamber}`;
+            const chamberElement = document.getElementById(selectedChamber);
             chamberElement.classList.add('selected');
 
             // Vérifier si la chambre sélectionnée est chargée
@@ -127,6 +135,7 @@
                 const chamber = document.getElementById(`Br${i}`);
                 chamber.classList.remove('loaded', 'selected');
             }
+            selectedChamber = null; // Réinitialiser la chambre bleue
         }
     </script>
 </head>
