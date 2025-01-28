@@ -92,7 +92,7 @@
 
             // Vérifier si la chambre sélectionnée est chargée
             if (chamberElement && chamberElement.classList.contains('loaded')) {
-                alert("Perdu : la chambre sélectionnée était chargée ! Vous avez tout perdu.");
+                alert(`Perdu : la chambre ${randomChamber} était chargée ! Vous avez tout perdu.`);
                 totalGains = 0; // Réinitialiser les gains
             } else {
                 // Calculer les gains en fonction du nombre de chambres chargées
@@ -109,7 +109,7 @@
                         break;
                 }
                 totalGains += gain;
-                alert(`Gagné : la chambre sélectionnée était vide ! Vous gagnez ${gain}€.\nGains totaux : ${totalGains}€.`);
+                alert(`Gagné : la chambre ${randomChamber} était vide ! Vous gagnez ${gain}€.\nGains totaux : ${totalGains}€.`);
             }
 
             // Réinitialiser les chambres pour une nouvelle partie
