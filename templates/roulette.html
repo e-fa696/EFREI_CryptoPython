@@ -113,6 +113,7 @@
             } else {
                 // Calculer les gains en fonction du nombre de chambres chargées
                 let gain = 0;
+                const loadedChamberNumbers = Array.from(loadedChambers).map(chamber => chamber.replace('Br', ''));
                 switch (loadedChambers.size) {
                     case 1:
                         gain = 10000;
@@ -125,7 +126,9 @@
                         break;
                 }
                 totalGains += gain;
-                alert(`Gagné : la chambre ${randomChamber} était vide ! Vous gagnez ${gain}€.\nGains totaux : ${totalGains}€.`);
+                alert(`Gagné : la chambre ${randomChamber} était vide ! Vous avez chargé les chambres ${loadedChamberNumbers.join(', ')}.
+Gains : ${gain}€.
+Gains totaux : ${totalGains}€.`);
             }
 
             // Mettre à jour l'affichage des gains
