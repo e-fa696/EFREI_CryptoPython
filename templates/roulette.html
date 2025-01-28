@@ -92,13 +92,10 @@
                 return;
             }
 
-            // Réinitialiser la couleur bleue des chambres précédentes
-            if (selectedChamber) {
-                const previousBlueChamber = document.getElementById(selectedChamber);
-                if (previousBlueChamber) {
-                    previousBlueChamber.classList.remove('selected');
-                }
-            }
+            // Réinitialiser la couleur bleue des chambres précédentes correctement
+            document.querySelectorAll('.selected').forEach(chamber => {
+                chamber.classList.remove('selected');
+            });
 
             // Sélectionner une chambre bleue au hasard
             const randomChamber = Math.floor(Math.random() * 6) + 1;
@@ -138,10 +135,9 @@ Gains totaux : ${totalGains}€.`);
 
         function resetChambers() {
             loadedChambers.clear();
-            for (let i = 1; i <= 6; i++) {
-                const chamber = document.getElementById(`Br${i}`);
+            document.querySelectorAll('.loaded, .selected').forEach(chamber => {
                 chamber.classList.remove('loaded', 'selected');
-            }
+            });
             selectedChamber = null; // Réinitialiser la chambre bleue
         }
     </script>
