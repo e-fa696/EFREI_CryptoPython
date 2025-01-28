@@ -58,7 +58,7 @@ def biblio_img():
     return render_template('biblio_img.html')
 
 @app.route('/roulette')
-def biblio_img():
+def roulette():
     return render_template('roulette.html')
 
 
