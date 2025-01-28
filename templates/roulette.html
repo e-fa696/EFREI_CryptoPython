@@ -112,6 +112,9 @@
                 alert(`Gagné : la chambre ${randomChamber} était vide ! Vous gagnez ${gain}€.\nGains totaux : ${totalGains}€.`);
             }
 
+            // Mettre à jour l'affichage des gains
+            document.getElementById('gains').textContent = `Gains totaux : ${totalGains}€`;
+
             // Réinitialiser les chambres pour une nouvelle partie
             resetChambers();
         }
