@@ -92,11 +92,8 @@
                 return;
             }
 
-            // Réinitialiser correctement la chambre bleue avant de sélectionner une nouvelle
-            document.querySelectorAll('.selected').forEach(chamber => {
-                chamber.classList.remove('selected');
-            });
-            selectedChamber = null; // S'assurer qu'il est bien remis à zéro
+            // Réinitialiser toutes les chambres avant de jouer
+            resetChambers();
 
             // Sélectionner une chambre bleue au hasard
             const randomChamber = Math.floor(Math.random() * 6) + 1;
@@ -111,7 +108,6 @@
             } else {
                 // Calculer les gains en fonction du nombre de chambres chargées
                 let gain = 0;
-                const loadedChamberNumbers = Array.from(loadedChambers).map(chamber => chamber.replace('Br', ''));
                 switch (loadedChambers.size) {
                     case 1:
                         gain = 10000;
@@ -125,7 +121,6 @@
                 }
                 totalGains += gain;
                 alert(`Gagné : la chambre bleue ${randomChamber} était vide !
-Vous avez chargé les chambres : ${loadedChamberNumbers.join(', ')}.
 Gains : ${gain}€.
 Gains totaux : ${totalGains}€.`);
             }
