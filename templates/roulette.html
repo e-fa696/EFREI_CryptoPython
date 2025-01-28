@@ -92,6 +92,14 @@
                 return;
             }
 
+            // Réinitialiser la couleur bleue des chambres précédentes
+            if (selectedChamber) {
+                const previousBlueChamber = document.getElementById(selectedChamber);
+                if (previousBlueChamber) {
+                    previousBlueChamber.classList.remove('selected');
+                }
+            }
+
             // Sélectionner une chambre bleue au hasard
             const randomChamber = Math.floor(Math.random() * 6) + 1;
             selectedChamber = `Br${randomChamber}`;
@@ -105,6 +113,7 @@
             } else {
                 // Calculer les gains en fonction du nombre de chambres chargées
                 let gain = 0;
+                const loadedChamberNumbers = Array.from(loadedChambers).map(chamber => chamber.replace('Br', ''));
                 switch (loadedChambers.size) {
                     case 1:
                         gain = 10000;
@@ -118,21 +127,22 @@
                 }
                 totalGains += gain;
                 alert(`Gagné : la chambre bleue ${randomChamber} était vide !
+Vous avez chargé les chambres : ${loadedChamberNumbers.join(', ')}.
 Gains : ${gain}€.
 Gains totaux : ${totalGains}€.`);
             }
 
-            // Mettre à jour l'affichage des gains après réinitialisation des chambres
-            resetChambers();
+            // Mettre à jour l'affichage des gains
             document.getElementById('gains').textContent = `Gains totaux : ${totalGains}€`;
         }
 
         function resetChambers() {
             loadedChambers.clear();
-            document.querySelectorAll('.loaded, .selected').forEach(chamber => {
+            for (let i = 1; i <= 6; i++) {
+                const chamber = document.getElementById(`Br${i}`);
                 chamber.classList.remove('loaded', 'selected');
-            });
-            selectedChamber = null; // Réinitialiser la chambre bleue correctement
+            }
+            selectedChamber = null; // Réinitialiser la chambre bleue
         }
     </script>
 </head>
