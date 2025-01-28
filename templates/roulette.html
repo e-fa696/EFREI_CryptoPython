@@ -50,7 +50,7 @@
             transition: fill 0.3s;
         }
         .loaded {
-            fill: red;
+            fill: gold;
         }
     </style>
     <script>
@@ -68,11 +68,8 @@
         }
 
         function lancer() {
-            if (loadedChambers.size > 0) {
-                alert(`Les chambres chargées sont : ${Array.from(loadedChambers).map(id => id.replace('Br', '')).join(', ')}`);
-            } else {
-                alert("Aucune chambre n'est chargée.");
-            }
+            const randomChamber = Math.floor(Math.random() * 6) + 1;
+            alert(`Chiffre aléatoire tiré : ${randomChamber}`);
         }
     </script>
 </head>
@@ -88,6 +85,6 @@
         <circle cx="100" cy="100" r="10" fill="black" />
     </svg>
     <p>Cliquez sur une chambre pour la charger ou la décharger.</p>
-    <button onclick="lancer()">Lancer</button>
+    <button onclick="lancer()">Jouer</button>
 </body>
 </html>
